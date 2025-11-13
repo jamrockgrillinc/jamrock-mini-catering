@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>JamRock Mini-Catering</title>
   <meta name="description" content="JamRock Mini-Catering for small groups (2–4, 6–8, 10–12) plus Corporate Catering 25+. Authentic Jamaican favorites, sealed fresh. Text for a quote: 321-549-9161." />
+  <meta name="keywords" content="Jamaican catering, mini catering, family meals, Palm Bay catering, Caribbean food, Thanksgiving sides, holiday catering, JamRock Grill, small group catering" />
   <style>
     :root{
       --red:#c8102e; --gold:#ffd34d; --green:#198754; --ink:#111; --paper:#fff;
@@ -14,6 +15,7 @@
     .hero{position:relative;overflow:hidden;color:#fff}
     .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--red),var(--gold),var(--green));}
     .hero > .wrap{position:relative;z-index:1;padding:56px 20px;max-width:1100px;margin:0 auto;display:grid;gap:12px}
+    .tag{display:inline-block;background:rgba(0,0,0,.35);padding:6px 10px;border-radius:999px;font-size:12px;letter-spacing:.3px}
     h1{margin:0;font-size:clamp(28px,4vw,44px);line-height:1.05}
     .hero p{margin:0;max-width:780px;font-size:clamp(14px,2.2vw,18px);opacity:.95}
 
@@ -43,6 +45,23 @@
     footer{margin:40px 0 60px;color:#6b7280;text-align:center}
     .float{position:fixed;right:16px;bottom:16px;z-index:20}
     .sms{background:linear-gradient(90deg,var(--gold),#fff4a3);}
+    .nav{flex-wrap:wrap;}
+    .tray-photo{margin-bottom:10px;border-radius:12px;background:linear-gradient(135deg,#f3f4f6,#e5e7eb);padding:20px;text-align:center;font-size:13px;color:#4b5563;font-style:italic;}
+    @media (max-width:640px){
+      .hero > .wrap{padding:40px 16px;}
+      .nav{flex-direction:column;align-items:flex-start;gap:10px;}
+      .cta{flex-wrap:wrap;width:100%;}
+      .cta .btn{flex:1 1 45%;text-align:center;}
+      section{margin:24px auto;padding:0 16px;}
+      h1{font-size:32px;}
+    }
+    @media print{
+      .hero,.nav,.float{display:none !important;}
+      body{background:#fff;color:#000;}
+      section{max-width:100%;margin:0;padding:0.5in;}
+      .card{box-shadow:none;border-color:#ddd;}
+      .sms{display:none !important;}
+    }
 
     @media (prefers-color-scheme: dark){
       html,body{background:#0b0b0b;color:#eee}
@@ -58,6 +77,7 @@
   <header class="hero">
     <div class="wrap">
       <img src="Jamrock_Logo_b%20(4)%20(2).png" alt="JamRock Grill logo" style="height:80px;width:auto;display:block;" />
+      
       <h1>JamRock Mini-Catering<br/>Authentic Jamaican favorites — sealed fresh.</h1>
       <p>Choose your tray size, mix proteins and sides, and pick up ready-to-serve meals. All packages are sealed with tamper-evident freshness labels.</p>
     </div>
@@ -78,12 +98,18 @@
 
   <!-- MINI-CATERING -->
   <section id="mini">
-    <h2>Mini-Catering Menus</h2>
-    <p class="sub">Pricing shown per tray. Sizes: <span class="pill">Small 2–4</span> <span class="pill">Medium 6–8</span> <span class="pill">Large 10–12</span></p>
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;">
+      <div>
+        <h2>Mini-Catering Menus</h2>
+        <p class="sub">Pricing shown per tray. Sizes: <span class="pill">Small 2–4</span> <span class="pill">Medium 6–8</span> <span class="pill">Large 10–12</span></p>
+      </div>
+      <button class="btn outline" type="button" onclick="window.print()">Print Price Sheet</button>
+    </div>
 
     <div class="grid">
       <div class="card">
         <h3>🥩 Proteins</h3>
+        <div class="tray-photo">Tray photo coming soon – sample protein spread (oxtail, goat, chicken, jerk pork).</div>
         <table>
           <thead><tr><th>Item</th><th>Small</th><th>Medium</th><th>Large</th></tr></thead>
           <tbody>
@@ -100,6 +126,7 @@
 
       <div class="card">
         <h3>🍚 Rice & Sides</h3>
+        <div class="tray-photo">Tray photo coming soon – rice & peas, white rice, baked mac, and rasta pasta tray.</div>
         <table>
           <thead><tr><th>Item</th><th>Small</th><th>Medium</th><th>Large</th></tr></thead>
           <tbody>
@@ -113,6 +140,7 @@
 
       <div class="card">
         <h3>🥗 Veggies & Salads</h3>
+        <div class="tray-photo">Tray photo coming soon – steamed veggies, callaloo, salads, and cold sides.</div>
         <table>
           <thead><tr><th>Item</th><th>Small</th><th>Medium</th><th>Large</th></tr></thead>
           <tbody>
@@ -127,6 +155,7 @@
 
       <div class="card">
         <h3>🍰 Rum Cake & 🍹 Rum Punch</h3>
+        <div class="tray-photo">Tray photo coming soon – Rum Cake display and bottled Rum Punch.</div>
         <p style="margin:.5rem 0 .25rem;font-weight:700">Rum Cake</p>
         <table>
           <thead><tr><th>Size</th><th>Price</th></tr></thead>
@@ -151,6 +180,42 @@
 
     <p class="sub" style="margin-top:16px">All trays are sealed with tamper-evident <b>Kenco “Sealed for Freshness”</b> labels. Cold & hot containers labeled for easy reheating.</p>
     
+  </section>
+
+  <section id="holiday">
+    <h2>Holiday &amp; Thanksgiving Specials</h2>
+    <p class="sub">Perfect for Thanksgiving, Christmas, New Year’s gatherings, and Sunday family dinners.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Family Side Packages</h3>
+        <ul style="margin:0 0 0 1rem;line-height:1.6;">
+          <li>Rice &amp; Peas (Red or Gungu)</li>
+          <li>White Rice</li>
+          <li>Baked Mac &amp; Cheese</li>
+          <li>Rasta Pasta</li>
+          <li>Potato Salad • Pasta Salad • Steamed Veggies</li>
+        </ul>
+        <p style="margin-top:0.75rem;font-size:13px;color:#4b5563;">Mix and match sides in Small, Medium, and Large tray sizes to match your guest count.</p>
+      </div>
+      <div class="card">
+        <h3>How Holiday Ordering Works</h3>
+        <ol style="margin:0 0 0 1.1rem;line-height:1.6;font-size:14px;">
+          <li>Choose your tray sizes for proteins and sides.</li>
+          <li>Text <b>321-549-9161</b> with your guest count, pickup date, and menu choices.</li>
+          <li>We confirm your total and pickup window.</li>
+        </ol>
+        <p style="margin-top:0.75rem;font-size:13px;color:#4b5563;">For Thanksgiving, we recommend ordering at least 5–7 days in advance so we can prepare everything fresh.</p>
+      </div>
+      <div class="card">
+        <h3>Rum Cake &amp; Rum Punch Add-Ons</h3>
+        <p style="margin:0 0 .5rem;font-size:14px;">Complete your holiday table with JamRock desserts and drinks:</p>
+        <ul style="margin:0 0 0 1rem;line-height:1.6;font-size:14px;">
+          <li>Rum Cake: 6″, 8″, 10″, 12″ sizes</li>
+          <li>Rum Punch: Bottle, Half Gallon, Gallon</li>
+        </ul>
+        <p style="margin-top:0.75rem;font-size:13px;color:#4b5563;">Ask about holiday bundles that include trays, Rum Cake, and Rum Punch together.</p>
+      </div>
+    </div>
   </section>
 
   <!-- CORPORATE -->
